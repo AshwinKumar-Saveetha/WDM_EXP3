@@ -117,6 +117,9 @@ if bottom_wear_result:
 else:
     print("No frequent sequential patterns found in Bottom Wear.")
 print("\nFrequent Sequential Patterns - Party Wear:")
+
+
+
 if party_wear_result:
     for pattern, support in party_wear_result.items():
         print(f"Pattern: {pattern}, Support: {support}")
