@@ -62,7 +62,8 @@ def gsp(dataset, min_support):
     candidate_count = generate_candidates(dataset, k)
 
     # Step 3: Prune and update frequent patterns
-    frequent_patterns.update({itemset: count for itemset, count in candidate_count.items() if count >= min_support})
+    frequent_patterns.update({itemset: count for itemset,
+    count in candidate_count.items() if count >= min_support})
 
     # Step 4: Generate frequent k-item sequences until no more can be generated
     while candidate_count:
@@ -70,7 +71,8 @@ def gsp(dataset, min_support):
         candidate_count = generate_candidates(dataset, k)
 
         # Prune and update frequent patterns
-        frequent_patterns.update({itemset: count for itemset, count in candidate_count.items() if count >= min_support})
+        frequent_patterns.update({itemset: count for itemset,
+        count in candidate_count.items() if count >= min_support})
 
     return frequent_patterns
 
@@ -105,12 +107,15 @@ bottom_wear_result = gsp(bottom_wear_data, min_support)
 party_wear_result = gsp(party_wear_data, min_support)
 # Output the frequent sequential patterns for each category
 print("Frequent Sequential Patterns - Top Wear:")
+
 if top_wear_result:
     for pattern, support in top_wear_result.items():
         print(f"Pattern: {pattern}, Support: {support}")
 else:
     print("No frequent sequential patterns found in Top Wear.")
 print("\nFrequent Sequential Patterns - Bottom Wear:")
+
+
 if bottom_wear_result:
     for pattern, support in bottom_wear_result.items():
         print(f"Pattern: {pattern}, Support: {support}")
