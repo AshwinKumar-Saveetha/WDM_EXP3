@@ -39,7 +39,8 @@ for each wear category.</p>
 
 ### Program:
 
-```pythonfrom collections import defaultdict
+```python
+from collections import defaultdict
 from itertools import combinations
 
 # Function to generate candidate k-item sequences
